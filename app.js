@@ -25,6 +25,15 @@ function randomSquare() {
 }
 
 squares.forEach(square => {
+    square.addEventListener('touchstart', () => {
+        if (square.id == hitPosition) {
+            result++;
+            score.textContent = result;
+            hitPosition = null;
+        }
+    })
+})
+squares.forEach(square => {
     square.addEventListener('mousedown', () => {
         if (square.id == hitPosition) {
             result++;
